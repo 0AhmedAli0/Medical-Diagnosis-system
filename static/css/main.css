@@ -1,0 +1,167 @@
+section{
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+
+.section{
+  display: flex;
+  height: 600px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.section .container{
+  height: 530px;
+  width: 450px;
+  position: relative;
+  margin: 0px;
+  border-radius: 12px;
+  padding: 0px;
+}
+.container form .ib{
+  display: flex;
+  justify-content: space-between;
+}
+.container form .ib p{
+  margin-top: 30px;
+  display: block;
+  width: 49%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #478ac9;
+  padding: 11px;
+}
+.example{
+  height: 530px;
+  width: 450px;
+  background: #f6f6f6;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+}
+.info p{
+  color: #777;
+}
+
+.example img{
+  height: 370px;
+  width: 100%;
+}
+
+h3{
+  padding: 0px;
+  height: 16px;
+}
+
+.container .wrapper{
+  position: relative;
+  height: 370px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active{
+  border: none;
+}
+.wrapper .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img{
+  height: 100%;
+  width: 100%;
+}
+.wrapper.active img{
+  display: block;
+}
+.wrapper .icon{
+  font-size: 100px;
+  color: #478ac9;
+}
+.wrapper .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #1d1d45;
+}
+.wrapper #cancel-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #478ac9;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i{
+  display: block;
+}
+.wrapper #cancel-btn i:hover{
+  color: #e74c3c;
+}
+.wrapper .file-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  /* background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%); */
+  background-color: #478ac9;
+}
+.wrapper.active:hover .file-name{
+  display: block;
+}
+.container #custom-btn{
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  cursor: pointer;
+  /* background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%); */
+  background-color: #478ac9;
+}
+.container .predict{
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: #478ac9;
+
+}

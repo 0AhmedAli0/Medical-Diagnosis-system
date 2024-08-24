@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCD</title>
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <link rel="stylesheet" href="./static/css/ms-desain.css" />
+    <link rel="stylesheet" href="./static/css/main.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./static/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&#038;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Start Header -->
+    <div class="header" id="header">
+      <div class="container">
+        <a href="#" class="logo">MDS</a>
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#About">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- start section -->
+    <section>
+      <div>
+        <h2 class="special-heading">Skin cancer detection</h2>
+        <p></p>
+        <div class="section">
+          <div class="container">
+            <div class="wrapper">
+              <div class="image">
+                {% if path==0 %}
+                <img src="" alt="" class="choosen-image" />
+                {% else %}
+                <img src=".{{path}}" alt="" class="choosen-image" />
+                {% endif %}
+              </div>
+              <div class="content">
+                <div class="icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="text">
+                  No file chosen, yet!
+                  <br />You are expected to upload an RGB image to be able to
+                  use this service, you can see samples of the input images on
+                  the right side, click on 'Choose a file' to upload your image
+                  then click 'Diagnose'<br />
+                  The diagnosis result will be shown in the right bottom blue
+                  section along with the confidance of that diagnosis
+                </div>
+              </div>
+              <div id="cancel-btn">
+                <i class="fas fa-times"></i>
+              </div>
+              <div class="file-name">File name here</div>
+            </div>
+            <button onclick="defaultBtnActive()" id="custom-btn">
+              Choose a file
+            </button>
+            <form
+              action="./SCD.html"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input
+                id="default-btn"
+                type="file"
+                name="imagefile"
+                hidden
+                required
+              />
+              <div class="ib">
+                <input
+                  style="width: 49%"
+                  class="predict"
+                  type="submit"
+                  value="Diagnose"
+                />
+                <p>{{Result}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="example">
+            <div class="card">
+              <img src="../static/image/skin-example.jpg" alt="" srcset="" />
+              <div class="info">
+                <h3>Input samples</h3>
+                <p>
+                  Differentiate between Benign and Malignant skin canser from
+                  skin images
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- {% if path%}
+        <p>{{path}}</p>
+        {% endif %} -->
+      </div>
+    </section>
+    <!--End section  -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <i class="fa-regular fa-copyright" style="color: #ffffff"></i> 2023
+      <span>DAIS</span> All Right Reserved
+    </div>
+    <!-- End Footer -->
+
+    <script src="./static/js/main.js"></script>
+  </body>
+</html>

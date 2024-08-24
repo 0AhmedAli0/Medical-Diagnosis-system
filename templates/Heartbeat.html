@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heartbeat</title>
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <link rel="stylesheet" href="./static/css/ms-desain.css" />
+    <link rel="stylesheet" href="./static/css/main.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./static/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&#038;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Start Header -->
+    <div class="header" id="header">
+      <div class="container">
+        <a href="#" class="logo">MDS</a>
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#About">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- start section -->
+    <section>
+      <div style="margin-left: 20px; margin-right: 20px">
+        <h2 class="special-heading" style="font-size: 80px">
+          Heartbeat abnormalities detection from ECG
+        </h2>
+        <p></p>
+        <div class="section" style="width: 100%">
+          <div class="container" style="width: 65%">
+            <div class="wrapper">
+              <div class="image">
+                {% if path==0 %}
+                <img src="" alt="" class="choosen-image" />
+                {% else %}
+                <img src=".{{path}}" alt="" class="choosen-image" />
+                {% endif %}
+              </div>
+              <div class="content">
+                <div class="icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="text">
+                  No file chosen, yet!
+                  <br />You are expected to upload a biomedical signal file
+                  (.dat or .mat) and make sure to select the header file (.hea)
+                  as well, Click on 'Choose a file' to upload your file then
+                  click 'Diagnose'<br />The diagnosis result will be shown in
+                  the right bottom blue section along with the confidance of
+                  that diagnosis, an image of the extracted beat that the
+                  diagnosis was based on will appear in the bottom right part
+                  and will be highlighted on the uploaded signal as well
+                </div>
+              </div>
+              <div id="cancel-btn">
+                <i class="fas fa-times"></i>
+              </div>
+              <div class="file-name">File name here</div>
+            </div>
+            <button onclick="defaultBtnActive()" id="custom-btn">
+              Choose a file
+            </button>
+            <form
+              action="./Heartbeat.html"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input
+                id="default-btn"
+                type="file"
+                name="imagefile"
+                hidden
+                multiple
+                required
+              />
+              <div class="ib">
+                <input
+                  style="width: 49%"
+                  class="predict"
+                  type="submit"
+                  value="Diagnose"
+                />
+                <p>{{Result}}</p>
+              </div>
+            </form>
+          </div>
+          <div class="example">
+            <div class="card">
+              {% if path %}
+              <img src=".{{res_path}}" alt="" srcset="" />
+              {% else %}
+              <img src="../static/image/ecg-example.png" alt="" srcset="" />
+              {% endif %}
+              <div class="info">
+                <!-- <h3>Input samples</h3> -->
+
+                {% if p %}
+                <p>{{p}}</p>
+                {% else %}
+                <p>
+                  Differentiate between Supraventricular premature beat,
+                  Premature ventricular contraction, Fusion of ventricular and
+                  Normal Beat from ECG signal
+                </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- {% if path%}
+      <p>{{path}}</p>
+      {% endif %} -->
+      </div>
+    </section>
+    <!--End section  -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <i class="fa-regular fa-copyright" style="color: #ffffff"></i> 2023
+      <span>MDS</span> All Right Reserved
+    </div>
+    <!-- End Footer -->
+
+    <script src="./static/js/main.js"></script>
+  </body>
+</html>
